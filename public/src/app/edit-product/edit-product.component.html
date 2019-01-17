@@ -1,0 +1,30 @@
+<h1 class="title">Edit Product</h1>
+
+
+<form class="form-group" id="edit_form" [formGroup]="prodEdit" (submit)="update()">
+
+        <label id="iLabel">Image Url</label>
+        <section class="titleS">
+            <input type="text" class="form-control" placeholder="Title" id="img-url" formControlName="title">
+            <div *ngIf="prodEdit.invalid && (prodEdit.dirty || prodEdit.touched)" class="alert alert-danger alert_box">
+                <div *ngIf="title.hasError('required')">Title is required</div>
+                <div *ngIf="title.hasError('minlength')">Title must be at least 3 characters long.</div>
+            </div>
+        </section>
+    
+        <label id="pLabel">Price</label>
+        <section class="priceS">
+            <input type="number" step="0.01" class="form-control" placeholder="100.00" id="price" formControlName="price">
+            <div *ngIf="prodEdit.invalid && (prodEdit.dirty || prodEdit.touched)" class="alert alert-danger alert_box">
+                <div *ngIf="price.hasError('required')">Price is required</div>
+            </div>
+        </section>
+    
+        <label id="tLabel">Title</label>
+        <section class="imgS">
+            <input type="text" class="form-control" id="title" formControlName="imgUrl">
+        </section>
+    <button type="submit" class="btn btn-3 editBtn">Update</button>
+    <button type="button" class="btn btn-custom-delete deleteBtn" (click)="remove(prod._id)">Delete</button>
+
+</form>

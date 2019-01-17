@@ -1,0 +1,11 @@
+
+<h1 class="title">Products List</h1>
+<section class="product-item" *ngFor="let prod of products">
+    <img class="prod-img" src="{{ prod.imgUrl }}" alt="">
+    <span class="prod-title">{{ prod.title }}</span>
+    <span class="price">${{ prod.price }} </span>
+    <aside>
+        <button class="btn btn-4 editBtn" [routerLink]="['/products/edit/', prod._id]">Edit</button>
+        <button class="btn btn-custom-delete deleteBtn" (click)="remove(prod._id)">Delete</button>
+    </aside>
+</section>

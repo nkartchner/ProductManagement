@@ -1,0 +1,82 @@
+.btn:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+}
+
+#edit_form {
+    grid-area: form;
+    width: 450px;
+    min-height: 250px;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px 100px 100px 120px;
+    grid-template-areas: 'title tform' 'price pform' 'img-url iform' 'dead buttons';
+    justify-items: center;
+    align-items: center;
+    border-radius:25px;
+}
+
+input{
+    width: 300px;
+    display: block;
+    margin: 0px 15px;
+}
+.imgS {
+    /* width: 300px;
+    display: inline-block;
+    margin: 15px; */
+    grid-area: iform;
+}
+
+.priceS {
+    /* width: 300px;
+    display: inline-block;
+    margin: 15px; */
+    grid-area: pform;
+}
+
+.titleS {
+    /* width: 300px;
+    display: inline-block;
+    margin: 15px; */
+    grid-area: tform;
+}
+
+#iLabel {
+    grid-area: img-url;
+}
+
+#pLabel {
+    grid-area: price;
+}
+
+#tLabel {
+    grid-area: title;
+}
+
+.editBtn{
+    grid-area: buttons;
+    margin-right: 130px;
+    align-self: start;
+}
+
+.deleteBtn{
+    grid-area: buttons;
+    margin-left: 110px;
+    align-self: start;
+}
+
+
+.ng-valid[required], .ng-valid {
+    border: 5px solid #42A948;
+    /* green */
+}
+
+.ng-invalid:not(form) {
+    border: 3px solid #a94442;
+    /* red */
+}
+.alert_box{
+    display:block;
+}

@@ -1,0 +1,9 @@
+.homeP {
+    width: 400px;
+    word-wrap: normal;
+    margin: auto;
+    grid-area: body;
+    text-align: center;
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+}

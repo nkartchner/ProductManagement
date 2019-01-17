@@ -1,0 +1,41 @@
+.product-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 70px 70px 70px;
+    grid-template-areas: 'picture' 'title' 'price' 'actions';
+    grid-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 40px;
+}
+
+img{
+    margin-top:10px;
+    width: 200px;
+}
+
+.editBtn {
+    grid-area: actions;
+    background: linear-gradient(to right, rgb(237, 33, 58) 0%, rgb(147, 41, 30) 100%);
+    align-self: start;
+}
+
+.deleteBtn {
+    grid-area: actions;
+    background: linear-gradient(to right, rgb(28, 146, 210) 0%, rgb(242, 252, 254) 100%);
+    margin-left: 10px;
+    align-self: start;
+}
+
+.prod-img {
+    grid-area: picture;
+}
+
+.price {
+    grid-area: price;
+}
+
+.prod-title {
+    grid-area: title;
+}

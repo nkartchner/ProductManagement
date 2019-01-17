@@ -1,0 +1,30 @@
+<h1 class="title">Create a New Product</h1>
+
+<form class="form-group" id="new_form" [formGroup]="newProd" (submit)="addProd()">
+
+
+    <label id="iLabel">Image Url</label>
+    <section class="titleS">
+        <input type="text" class="form-control" placeholder="Title" id="img-url" formControlName="title">
+        <div *ngIf="newProd.invalid && (newProd.dirty || newProd.touched)" class="alert alert-danger alert_box">
+            <div *ngIf="title.hasError('required')">Title is required</div>
+            <div *ngIf="title.hasError('minlength')">Title must be at least 3 characters long.</div>
+        </div>
+    </section>
+
+    <label id="pLabel">Price</label>
+    <section class="priceS">
+        <input type="text" class="form-control" placeholder="$$$$$$" id="price" formControlName="price">
+        <div *ngIf="newProd.invalid && (newProd.dirty || newProd.touched)" class="alert alert-danger alert_box">
+            <div *ngIf="price.hasError('required')">Price is required</div>
+        </div>
+    </section>
+
+    <label id="tLabel">Title</label>
+    <section class="imgS">
+        <input type="text" class="form-control" id="title" formControlName="imgUrl">
+    </section>
+
+        <button type="submit" class="btn btn-custom createBtn" [disabled]="!newProd.valid">Create</button>
+        <button type="reset" class="btn btn-1 resetBtn" (click)="newProd.reset()">Cancel</button>
+</form>
